@@ -3,6 +3,7 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 
+
 class ModelTests(TestCase):
     """ test models """
 
@@ -11,9 +12,8 @@ class ModelTests(TestCase):
         email = 'test@example.com'
         password = 'testpass123'
         user = get_user_model().objects.create_user(
-            email = email,
-            password = password,
-        )
+            email=email, password=password,
+            )
 
         self.assertEqual(user.email, email)
         self.assertTrue(user.check_password(password))
@@ -32,7 +32,7 @@ class ModelTests(TestCase):
         """ raise error if no email """
         with self.assertRaises(ValueError):
             get_user_model().objects.create_user('', 'password123')
-    
+
     def test_create_superuser(self):
         """ test creating a superuser """
         user = get_user_model().objects.create_superuser(
