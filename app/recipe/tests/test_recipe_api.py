@@ -15,15 +15,16 @@ from recipe.serializers import RecipeSerializer, RecipeDetailSerializer
 
 RECIPES_URL = reverse('recipe:recipe-list')
 
+
 def detail_url(recipe_id):
     ''' create and return a recipe detail url '''
-    return reverse('recipe': recipe-detail, args=[recipe_id])
+    return reverse('recipe:recipe-detail', args=['recipe_id'])
 
 def create_recipe(user, **params):
     ''' create and return a sample recipe '''
     defaults = {
         'title': 'Sample Recipe title',
-        'time_minutes',
+        'time_minutes': '5',
         'price': Decimal('5.25'),
         'description': 'Sample description of the recipte',
         'link': 'http://example.com/recipe/pdf'
@@ -49,7 +50,7 @@ class PrivateRecipeApiTests(TestCase):
     ''' test authenticated API requests '''
 
     def setUp(self):
-        self.client APIClient()
+        self.client = APIClient()
         self.user = get_user_model().objects.create_user(
             'user@example.com',
             'testpass',
