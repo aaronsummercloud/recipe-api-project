@@ -19,7 +19,7 @@ RECIPES_URL = reverse('recipe:recipe-list')
 def create_recipe(user, **params):
     ''' create and return a sample recipe '''
     defaults = {
-        'title' 'Sample Recipe title',
+        'title': 'Sample Recipe title',
         'time_minutes',
         'price': Decimal('5.25'),
         'description': 'Sample description of the recipte',
