@@ -161,3 +161,6 @@ class PrivateUserApiTests(TestCase):
         self.assertEqual(self.user.name, payload['name'])
         self.assertTrue(self.user.check_password(payload['password']))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_this_should_fail(self):
+        self.assertEqual(False, True)
