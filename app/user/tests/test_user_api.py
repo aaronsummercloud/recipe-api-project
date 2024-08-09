@@ -39,7 +39,7 @@ class PublicUserApiTests(TestCase):
 
         self.assertNotIn('password', result.data)
 
-    def test_user_with_email_exists(self):
+    def test_user_with_email_exists_error(self):
         """ tests error returned if user with email exists """
         payload = {
             'email': 'test@example.com',

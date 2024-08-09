@@ -27,7 +27,7 @@ def create_recipe(user, **params):
         'time_minutes': '5',
         'price': Decimal('5.25'),
         'description': 'Sample description of the recipte',
-        'link': 'http://example.com/recipe/pdf'
+        'link': 'http://example.com/recipe/pdf',
     }
     defaults.update(params)
 
